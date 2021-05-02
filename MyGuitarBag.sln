@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGuitarBag.Api", "MyGuitar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGuitarBag.Models", "MyGuitarBag.Models\MyGuitarBag.Models.csproj", "{6620F029-454B-48C2-99D3-54D545469A8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGuitarBag.Sdk", "MyGuitarBag.Sdk\MyGuitarBag.Sdk.csproj", "{8CDC3B9C-980C-4297-A043-AC2AB24D26FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6620F029-454B-48C2-99D3-54D545469A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6620F029-454B-48C2-99D3-54D545469A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6620F029-454B-48C2-99D3-54D545469A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CDC3B9C-980C-4297-A043-AC2AB24D26FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDC3B9C-980C-4297-A043-AC2AB24D26FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDC3B9C-980C-4297-A043-AC2AB24D26FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDC3B9C-980C-4297-A043-AC2AB24D26FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
