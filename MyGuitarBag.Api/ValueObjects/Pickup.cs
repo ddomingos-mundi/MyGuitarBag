@@ -1,6 +1,6 @@
-﻿namespace MyGuitarBag.Models
+﻿namespace MyGuitarBag.Api.ValueObjects
 {
-    public class PickupModel
+    public class Pickup
     {
         public string Brand { get; set; }
         public string Model { get; set; }

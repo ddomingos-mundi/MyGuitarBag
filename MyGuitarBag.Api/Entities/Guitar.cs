@@ -1,14 +1,16 @@
-﻿using System;
+﻿using MyGuitarBag.Api.ValueObjects;
+using System;
 using System.Collections.Generic;
 
-namespace MyGuitarBag.Models
+namespace MyGuitarBag.Api.Entities
 {
-    public class GuitarModel
+    public class Guitar
     {
+        public Guid Id { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
-        public IEnumerable<PickupModel> Pickups { get; set; }
+        public IEnumerable<Pickup> Pickups { get; set; }
         public string Color { get; set; }
         public int StringQuantity { get; set; }
         public string Description { get; set; }
