@@ -1,7 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Authors>Danilo Domingos</Authors>
+    <Company>PagarMe</Company>
+    <Description>SDK de exemplo para o PagarMe Talks</Description>
+    <PackageTags>talks sdks apiClient rest</PackageTags>
+    <Icon>images\icon.png</Icon>
+    <Copyright>Copyright 2021</Copyright>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +21,13 @@
   <ItemGroup>
     <ProjectReference Include="..\MyGuitarBag.Models\MyGuitarBag.Models.csproj" />
   </ItemGroup>
+
+  <!-- Arquivos de licença e ícone -->
+  <ItemGroup>
+    <None Include="Assets\icon.png" Pack="true" Visible="true" PackagePath="images\icon.png" />
+    <None Update="License\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
+  </ItemGroup>
+  
   
 
 </Project>
