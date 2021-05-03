@@ -27,8 +27,13 @@ namespace MyGuitarBag.Api.Controllers
         [Route("{id}")]
         public IActionResult Delete(Guid id)
         {
+            if (_service.Get(id) == null)
+                return NotFound(null);
+            
             _service.Delete(id);
+
             return NoContent();
+
         }
 
         [HttpGet]

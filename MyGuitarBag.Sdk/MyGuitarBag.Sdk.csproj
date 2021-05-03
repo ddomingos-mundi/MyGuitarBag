@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.1</Version>
+    <Version>0.0.5</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <Authors>Danilo Domingos</Authors>
     <Company>PagarMe</Company>
     <Description>SDK de exemplo para o PagarMe Talks</Description>
+    <RepositoryType>public</RepositoryType>
+    <RepositoryUrl>https://github.com/ddomingos-mundi/MyGuitarBag</RepositoryUrl>
     <PackageTags>talks sdks apiClient rest</PackageTags>
-    <Icon>images\icon.png</Icon>
+    <PackageIconUrl>https://github.com/ddomingos-mundi/MyGuitarBag/blob/master/MyGuitarBag.Sdk/Assets/icon.png</PackageIconUrl>
+    <PackageIcon>images\icon.png</PackageIcon>
     <Copyright>Copyright 2021</Copyright>
-    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
   </PropertyGroup>
 
@@ -19,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyGuitarBag.Models\MyGuitarBag.Models.csproj" />
+    <ProjectReference Include="..\MyGuitarBag.Models\MyGuitarBag.Models.csproj">
+      <PrivateAssets>all</PrivateAssets> <!-- Esconde o arquivo como dependência -->
+    </ProjectReference>
   </ItemGroup>
 
   <!-- Arquivos de licença e ícone -->
@@ -27,7 +32,12 @@
     <None Include="Assets\icon.png" Pack="true" Visible="true" PackagePath="images\icon.png" />
     <None Update="License\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
   </ItemGroup>
-  
-  
+
+  <!-- Inclui MyGuitarBag.Models no package -->
+  <ItemGroup>
+    <None Include="$(OutputPath)\MyGuitarBag.Models.dll" Pack="true">
+      <PackagePath>lib\netstandard2.0\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
