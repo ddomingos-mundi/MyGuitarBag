@@ -29,21 +29,24 @@ namespace MyGuitarBag.Api.Mock
 
             if (!string.IsNullOrEmpty(filters.Model))
             {
-                query = query.Where(g => g.Model == filters.Model);
+                query = query.Where(g => !string.IsNullOrWhiteSpace(g.Model)
+                                            && g.Model.ToLower().Contains(filters.Model?.ToLower()));
             }
 
             if (!string.IsNullOrEmpty(filters.Color))
             {
-                query = query.Where(g => g.Color == filters.Color);
+                query = query.Where(g => !string.IsNullOrWhiteSpace(g.Color) 
+                                            && g.Color.ToLower().Contains(filters.Color?.ToLower()));
             }
 
-            int countToSkip = ((filters.Page - 1) * filters.Size);
+            int totalItems = query?.ToList()?.Count() ?? 0;
 
+            int countToSkip = ((filters.Page - 1) * filters.Size);
             query = query.Skip(countToSkip).Take(filters.Size);
 
             var guitars = HydrateGetGuitarListResponse(query);
 
-            return new GetGuitarListResponse(guitars, filters.Page, filters.Size, this.Guitars.Count());
+            return new GetGuitarListResponse(guitars, filters.Page, filters.Size, totalItems);
         }
 
         public GetGuitarResponse Create(PostGuitarRequest request)
@@ -66,7 +69,7 @@ namespace MyGuitarBag.Api.Mock
                 Year = request.Year
             };
 
-            this.Guitars.Append(guitar);
+            ((List<Guitar>)this.Guitars).Add(guitar);
 
             return HydrateGetGuitarResponse(guitar);
         }
@@ -182,7 +185,7 @@ namespace MyGuitarBag.Api.Mock
                 Color = "Red",
                 Year = 1975,
                 Model = "EDS-1275",
-                StringQuantity = 6,
+                StringQuantity = 18,
                 Pickups = new List<Pickup>
                 {
                    new Pickup
